@@ -2,8 +2,10 @@ package com.example.shoppingservice.client;
 
 import com.example.shoppingservice.model.Customer;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
-public class CustomerHystrixFallbackFactory implements CustomerClient {
+@Component
+public class CustomerResilienceFallbackFactory implements CustomerClient {
     @Override
     public ResponseEntity<Customer> getCustomer(long id) {
         Customer customer =
