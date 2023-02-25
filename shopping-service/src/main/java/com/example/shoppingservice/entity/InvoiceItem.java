@@ -1,5 +1,6 @@
 package com.example.shoppingservice.entity;
 
+import com.example.shoppingservice.model.Product;
 import lombok.Data;
 
 import jakarta.persistence.*;
@@ -23,6 +24,8 @@ public class InvoiceItem  {
     @Transient
     private Double subTotal;
 
+    @Transient
+    private Product product;
 
     public Double getSubTotal(){
         if (this.price >0  && this.quantity >0 ){
